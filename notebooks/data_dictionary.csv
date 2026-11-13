@@ -1,0 +1,13 @@
+column_name,data_type,description,source,transformation_or_derivation,notes_or_concerns
+movieId,int64,Unique ID for each movie,movies,Original movie ID,
+title,str,Title of the movie,movies,Original movie title,
+runtime,float64,Length of the movie in minutes,movies,Original runtime from dataset,
+budget,int64,Movie production budget,movies,Original budget from dataset,Some budget values are zero and may represent missing information
+revenue,float64,Money earned by the movie,movies,Original revenue from dataset,Some revenue values are zero and may represent missing information
+popularity,float64,Popularity score of the movie,movies,Original popularity score from dataset,
+primary_genre,str,Main genre of the movie,movies,Selected from the movie's genre list,
+release_year,int64,Year the movie was released,movies,Year taken from release date,
+user_rating_mean,float64,Average rating given by users for each movie,ratings,Calculated by averaging user ratings for each movie,Movies with few ratings may have less reliable averages
+user_rating_count,float64,Number of user ratings received by each movie,ratings,Calculated by counting ratings for each movie,
+rating_target_eligible,bool,Shows whether a movie has enough ratings to be included in the analysis,ratings,Created using the number of ratings for each movie,
+high_user_rating,Int64,Shows whether a movie has a high average user rating,ratings,Created using the average user rating for eligible movies,Movies without enough ratings do not receive a classification
